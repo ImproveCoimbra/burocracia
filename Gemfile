@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+ruby '1.9.3'
+gem 'rails', '3.2.12'
 
 # jQuery
 gem 'jquery-rails'
