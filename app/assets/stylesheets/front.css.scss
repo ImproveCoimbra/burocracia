@@ -1,0 +1,32 @@
+// Place all the styles related to the front controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#documents-list {
+
+  * {
+    font-size: 32px;
+    line-height: 40px;
+    display: inline;
+    margin: 0;
+  }
+
+  li {
+    padding-left: 10px;
+  }
+
+  li {
+    color: #333;
+    li {
+      color: #888;
+      li, li a {
+        color: #CCC;
+      }
+    }
+  }
+
+  ul, li {
+
+  }
+
+}

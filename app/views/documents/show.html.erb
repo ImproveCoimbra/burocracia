@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @document.title %></h1>
+<h2><%= @document.date %></h2>
+
+<%= @document.content_html %>
+
+<p><%= link_to 'Source', @document.source_url %></p>
+
+<p>
+  <%= link_to 'Edit', edit_document_path(@document) %> |
+  <%= link_to 'Back', documents_path %>
+</p>

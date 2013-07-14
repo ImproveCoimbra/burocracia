@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Burocracia</title>
+  <meta name="description" content="Disponibilizar documentos públicos em formato aberto.">
+  <META NAME="keywords" CONTENT="actas,camara,coimbra,improve,documentos">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="span10 offset1">
+        <div class="page-header">
+          <div class="row">
+            <h1 class="span7">
+              <a href="/">Burocracia</a>
+            </h1>
+            <div class="span3">
+              <form class="form-search"><input type="text" style="width: 100%" placeholder="Pesquisa" class="search-query" name="q" value="<%= params[:q] %>" /></form>
+            </div>
+          </div>
+          <p>
+            Queremos disponibilizar documentos públicos num formato aberto, fácil de pesquisar e analisar.<br/>
+            Os documentos aqui disponíveis foram processados automaticamente e poderão conter imprecisões.
+          </p>
+        </div>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <p>
+            <a href="mailto:me@sergiosantos.info">Feedback</a> | <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

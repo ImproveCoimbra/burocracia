@@ -1,0 +1,40 @@
+<h2>Actas da Câmara Municipal de Coimbra</h2>
+
+<% if params[:q].present? %>
+  <% if @documents.any? %>
+    <dl>
+      <% for document in @documents %>
+        <dt><%= link_to document.date, "/doc/#{document.id}" %></li>
+        <% if params[:q].present? %>
+          <dd><%= highlight(excerpt(document.content, params[:q], :radius => 150).html_safe.gsub('<br/>',' '),params[:q]) %></dd>
+        <% end %>
+      <% end %>
+    </dl>
+  <% else %>
+    <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
+  <% end %>
+<% else %>
+  <ul id="documents-list">
+    <% organize(@documents).each do |year, docs| %>
+      <li>
+        <%= year %>
+        <% if docs.any? %>
+          <ul>
+            <% docs.each do |month, docs| %>
+              <li>
+                <%= month_name(month) %>
+                <% if docs.any? %>
+                  <ul>
+                    <% docs.each do |doc| %>
+                      <li><%= link_to doc.date.day, "/doc/#{doc.id}" %></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

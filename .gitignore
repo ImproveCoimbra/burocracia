@@ -1,0 +1,12 @@
+db/*
+log/*
+tmp/**/*
+.project
+Thumbs.db
+.bundle
+coverage/*
+coverage.data
+.DS_Store
+lib/tasks/support_files/results/*
+solr/*
+.ruby-version
