@@ -1,11 +1,11 @@
 class DocumentsController < ApplicationController
 
-  http_basic_authenticate_with :name => "docs", :password => "coimbra"
+  http_basic_authenticate_with :name => "improve", :password => "improve13"
 
   # GET /documents
   # GET /documents.json
   def index
-    @documents = Document.all.only(:title, :date)
+    @documents = Document.all.only(:title, :date).desc(:date)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -149,3 +149,28 @@ task :actas_miner => :environment do
   end
 
 end
+
+task :fetch_dates => :environment do
+
+  Document.all.each do |document|
+    unless document.date
+      matches = /data:?\s*(\d{1,2})\/(\d{1,2})\/(\d{2,4})/i.match(document.content)
+      if matches
+        year = matches[3].to_i
+        year += 1900 if year < 100
+        document.date = Date.new(year, matches[2].to_i, matches[1].to_i)
+        document.save
+        next
+      end
+      matches = /acta\s+nº\.?\s*\d+\s+de\s+(\d{1,2})\/(\d{1,2})\/(\d{2,4})/i.match(document.content)
+      if matches
+        year = matches[3].to_i
+        year += 1900 if year < 100
+        document.date = Date.new(year, matches[2].to_i, matches[1].to_i)
+        document.save
+        next
+      end
+    end
+  end
+
+end

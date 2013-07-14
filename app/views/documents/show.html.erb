@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @document.title %></h1>
-<h2><%= @document.date %></h2>
+<h2><%= @document.date %> <small><%= @document.title %></small></h2>
 
 <%= @document.content_html %>
 
-<p><%= link_to 'Source', @document.source_url %></p>
+<p><%= link_to 'Download', @document.source_url %></p>
 
 <p>
-  <%= link_to 'Edit', edit_document_path(@document) %> |
-  <%= link_to 'Back', documents_path %>
+  <%= link_to 'Editar', edit_document_path(@document) %> |
+  <%= link_to 'Voltar', documents_path %>
 </p>

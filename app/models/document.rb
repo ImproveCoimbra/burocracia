@@ -1,6 +1,7 @@
 class Document
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::MultiParameterAttributes
 
   field :title
   field :content
@@ -11,7 +12,7 @@ class Document
   index :date, :background => true
 
   def content_html
-  	content.gsub!(/(\s*\n\s*){2,}/, '<br/><br/>').gsub!(/\s*\n\s*/, '<br/>').html_safe
+  	content.gsub(/(\s*\n\s*){2,}/, '<br/><br/>').gsub(/\s*\n\s*/, '<br/>').html_safe
   end
 
 end

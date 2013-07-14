@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Burocracia</title>
-  <meta name="description" content="Disponibilizar documentos públicos em formato aberto.">
-  <META NAME="keywords" CONTENT="actas,camara,coimbra,improve,documentos">
+  <title><% if content_for? :title %><%= yield :title %> - <% end %>Burocracia</title>
+  <meta name="description" content="Disponibilizar documentos públicos em formato aberto. Começámos com as actas da Câmara Municipal de Coimbra">
+  <meta name="keywords" content="actas,camara,coimbra,improve,documentos">
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
@@ -46,6 +46,17 @@
       </div>
     </div>
   </footer>
+
+  <% if Rails.env.production? %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-42452983-1', 'madeincoimbra.org');
+      ga('send', 'pageview');
+    </script>
+  <% end %>
 
 </body>
 </html>

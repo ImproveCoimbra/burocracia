@@ -2,7 +2,6 @@
   <% if @document.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
-
       <ul>
       <% @document.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,6 +9,15 @@
       </ul>
     </div>
   <% end %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, :class => 'span4' %>
+
+  <%= f.label :date %>
+  <%= f.date_select :date, :start_year => 1900, :end_year => 2100 %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, :class => 'span10' %>
 
   <div class="actions">
     <%= f.submit %>

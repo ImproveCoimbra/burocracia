@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+dl {
+  dt {
+    font-size: 18px;
+  }
+  dd {
+    margin-bottom: 20px;
+  }
+}
+
 #documents-list {
 
   * {
