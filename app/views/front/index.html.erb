@@ -5,6 +5,13 @@
 <h2>Actas da Câmara Municipal de Coimbra</h2>
 
 <% if params[:q].present? %>
+
+  <h3>Resultados para "<%= params[:q] %>"</h3>
+
+  <% if @documents.size > 3 %>
+    <%= column_chart count_by_year(@documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
+  <% end %>
+
   <% if @documents.any? %>
     <dl>
       <% for document in @documents %>
@@ -17,7 +24,9 @@
   <% else %>
     <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
   <% end %>
+
 <% else %>
+
   <ul id="documents-list">
     <% organize(@documents).each do |year, docs| %>
       <li>

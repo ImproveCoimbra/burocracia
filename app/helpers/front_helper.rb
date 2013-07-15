@@ -12,4 +12,15 @@ module FrontHelper
     docs
   end
 
+  def count_by_year(documents)
+    counts = {}
+    documents[-1].date.year.upto(documents[0].date.year) do |year|
+      counts[year] = 0
+    end
+    documents.each do |document|
+      counts[document.date.year] += 1 if document.date
+    end
+    counts
+  end
+
 end
