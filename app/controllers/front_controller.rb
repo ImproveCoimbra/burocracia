@@ -11,7 +11,6 @@ class FrontController < ApplicationController
 
   def doc
     @document = Document.find(params[:id])
-    p @document.content[0...1000]
   end
 
 end
