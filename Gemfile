@@ -21,4 +21,4 @@ gem 'nokogiri'
 gem 'rb-readline', '~> 0.4.2'
 gem 'chartkick'
 
-gem 'unicorn'
+gem 'unicorn', :platform => :ruby

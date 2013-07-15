@@ -17,7 +17,7 @@
       <% for document in @documents %>
         <dt><%= link_to document.date, "/doc/#{document.id}" %></li>
         <% if params[:q].present? %>
-          <dd><%= highlight(excerpt(document.content, params[:q], :radius => 150).html_safe.gsub('<br/>',' '),params[:q]) %></dd>
+          <dd><%= highlight(excerpt(document.content, params[:q], :radius => 150).html_safe, params[:q]) %></dd>
         <% end %>
       <% end %>
     </dl>
