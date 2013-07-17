@@ -9,7 +9,7 @@
   <h3>
     Resultados para "<%= params[:q] %>"
     <% if @stats['n'] != @stats['nfound'] %>
-      <small>apenas os <%= pluralize(@stats['n'], 'resultado') %> mais relevantes de <%= @stats['nfound'] %> são apresentados.</small>
+      <small>apenas os <%= @stats['n'] %> de <%= pluralize(@stats['nfound'], 'resultado') %> mais relevantes são apresentados</small>
     <% else %>
       <small><%= pluralize(@stats['n'], 'resultado') %></small>
     <% end %>
