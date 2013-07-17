@@ -6,9 +6,16 @@
 
 <% if params[:q].present? %>
 
-  <h3>Resultados para "<%= params[:q] %>"</h3>
+  <h3>
+    Resultados para "<%= params[:q] %>"
+    <% if @stats['n'] != @stats['nfound'] %>
+      <small>apenas os <%= pluralize(@stats['n'], 'resultado') %> mais relevantes de <%= @stats['nfound'] %> são apresentados.</small>
+    <% else %>
+      <small><%= pluralize(@stats['n'], 'resultado') %></small>
+    <% end %>
+  </h3>
 
-  <% if @documents.size > 3 %>
+  <% if false and @documents.size > 3 %>
     <%= column_chart count_by_year(@documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
   <% end %>
 
@@ -16,8 +23,10 @@
     <dl>
       <% for document in @documents %>
         <dt><%= link_to document.date, "/doc/#{document.id}" %></li>
-        <% if params[:q].present? %>
-          <dd><%= highlight(excerpt(document.content, params[:q], :radius => 150).html_safe, params[:q]) %></dd>
+        <% if params[:q].present? and document.content.include? params[:q] %>
+          <dd>
+            <%= highlight(excerpt(document.content, params[:q], :radius => 150), params[:q]) %>
+          </dd>
         <% end %>
       <% end %>
     </dl>
