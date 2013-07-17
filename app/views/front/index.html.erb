@@ -9,13 +9,13 @@
   <h3>
     Resultados para "<%= params[:q] %>"
     <% if @stats['n'] != @stats['nfound'] %>
-      <small>apenas os <%= @stats['n'] %> de <%= pluralize(@stats['nfound'], 'resultado') %> mais relevantes são apresentados</small>
+      <small>apenas <%= @stats['n'] %> de <%= pluralize(@stats['nfound'], 'resultado') %> mais relevantes são apresentados</small>
     <% else %>
       <small><%= pluralize(@stats['n'], 'resultado') %></small>
     <% end %>
   </h3>
 
-  <% if false and @documents.size > 3 %>
+  <% if @documents.size > 3 %>
     <%= column_chart count_by_year(@documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
   <% end %>
 

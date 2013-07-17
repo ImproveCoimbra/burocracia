@@ -4,7 +4,7 @@ class FrontController < ApplicationController
     if params[:q].present?
       search = Document.limit(1000).text_search('"'+params[:q]+'"')
       @stats = search.stats
-      @documents = search.entries.sort_by! { |doc| doc.date }
+      @documents = search.entries.sort_by!{ |doc| doc.date }.reverse
     else
       @documents = Document.all.only(:title, :date).order_by(:date => :desc)
     end
