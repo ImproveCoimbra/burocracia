@@ -23,9 +23,11 @@
     <dl>
       <%= render :partial => 'doc_excerpt', :collection => @documents, :as => :document %>
     </dl>
-    <p class="pagination">
-      <%= link_to 'Load more', "?page=#{(params[:page]||1)+1}&q=#{params[:q]}", :remote => true, :id => 'load-more-docs', :class => 'btn' %>
-    </p>
+    <% if @documents.total_count > 1 %>
+      <p class="pagination">
+        <%= link_to 'Ver mais', "?page=#{(params[:page]||1)+1}&q=#{params[:q]}", :remote => true, :id => 'load-more-docs', :class => 'btn' %>
+      </p>
+    <% end %>
   <% else %>
     <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
   <% end %>
