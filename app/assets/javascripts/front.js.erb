@@ -1,0 +1,10 @@
+jQuery(function ($) {
+
+  $('#load-more-docs').on('ajax:beforeSend', function() {
+    $(this).html('<img src="<%= image_url "loader.gif" %>" />');
+    $(this).attr('disabled', 'disabled');
+    $(this).addClass('btn-disabled');
+    $(this).attr('href', '#');
+  });
+
+});

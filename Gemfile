@@ -19,4 +19,5 @@ group :development do
   gem 'rb-readline', '~> 0.4.2'
 end
 
+gem 'kaminari'
 gem 'chartkick'

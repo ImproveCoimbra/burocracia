@@ -15,21 +15,17 @@
     <% end %>
   </h3>
 
-  <% if @documents.size > 3 %>
-    <%= column_chart count_by_year(@documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
+  <% if @all_documents.size > 3 %>
+    <%= column_chart count_by_year(@all_documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
   <% end %>
 
   <% if @documents.any? %>
     <dl>
-      <% for document in @documents %>
-        <dt><%= link_to document.date, "/doc/#{document.id}" %></li>
-        <% if params[:q].present? and document.content =~ /#{Regexp.escape(params[:q])}/im %>
-          <dd>
-            <%= highlight(excerpt(document.content, params[:q], :radius => 150), params[:q]) %>
-          </dd>
-        <% end %>
-      <% end %>
+      <%= render :partial => 'doc_excerpt', :collection => @documents, :as => :document %>
     </dl>
+    <p class="pagination">
+      <%= link_to 'Load more', "?page=#{(params[:page]||1)+1}&q=#{params[:q]}", :remote => true, :id => 'load-more-docs', :class => 'btn' %>
+    </p>
   <% else %>
     <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
   <% end %>
