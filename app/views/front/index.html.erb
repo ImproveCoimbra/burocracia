@@ -23,7 +23,7 @@
     <dl>
       <%= render :partial => 'doc_excerpt', :collection => @documents, :as => :document %>
     </dl>
-    <% if @documents.total_count > 1 %>
+    <% if @documents.total_pages > 1 %>
       <p class="pagination">
         <%= link_to 'Ver mais', "?page=#{(params[:page]||1)+1}&q=#{params[:q]}", :remote => true, :id => 'load-more-docs', :class => 'btn' %>
       </p>
