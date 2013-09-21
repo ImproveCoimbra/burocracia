@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def month_name(month)
-    %w{Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro}[month]
+    %w{Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro}[month-1][0..2]
   end
 
 end

@@ -15,23 +15,32 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="span10 offset1">
-        <div class="page-header">
-          <div class="row">
-            <h1 class="span7">
+  <div id="header">
+    <div class="container">
+      <div class="row">
+        <div class="span10 offset1">
+          <div class="page-header">
+            <h1>
               <a href="/">Burocracia</a>
             </h1>
-            <div class="span3">
-              <form action="/" class="form-search"><input type="text" style="width: 100%" placeholder="Pesquisa" class="search-query" name="q" value="<%= params[:q] %>" /></form>
-            </div>
+            <p>
+              Queremos disponibilizar documentos públicos num formato aberto, fácil de pesquisar e analisar.
+            </p>
+            <form action="/" class="form-search">
+              <input type="text" style="width: 100%" placeholder="Pesquisar documentos" class="search-query" name="q" value="<%= params[:q] %>" />
+            </form>
+            <p class="small">
+              Os documentos aqui disponíveis foram processados automaticamente e poderão conter imprecisões.
+            </p>
           </div>
-          <p>
-            Queremos disponibilizar documentos públicos num formato aberto, fácil de pesquisar e analisar.<br/>
-            Os documentos aqui disponíveis foram processados automaticamente e poderão conter imprecisões.
-          </p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contents" class="container">
+    <div class="row">
+      <div class="span10 offset1">
         <%= yield %>
       </div>
     </div>

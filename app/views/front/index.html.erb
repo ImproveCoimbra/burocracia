@@ -16,7 +16,7 @@
   </h3>
 
   <% if @all_documents.size > 3 %>
-    <%= column_chart count_by_year(@all_documents), :height => "100px", :library => {:colors => ["#999"], :hAxis => {:textStyle => {:fontSize => 10}}, :vAxis => {:title => 'Actas'}} %>
+    <%= column_chart count_by_year(@all_documents), :height => "100px", :id => "chart", :library => {:colors => ["#ECF0F1"], :backgroundColor => "#2ECD71", :color => "#ECF0F1", :hAxis => {:textStyle => {:fontSize => 10, :color => "#ECF0F1"}}, :vAxis => {:textStyle => {:color => "#ECF0F1"}}} %>
   <% end %>
 
   <% if @documents.any? %>
@@ -34,28 +34,30 @@
 
 <% else %>
 
-  <ul id="documents-list">
+  <div id="documents-list">
     <% organize(@documents).each do |year, docs| %>
-      <li>
-        <%= year %>
-        <% if docs.any? %>
-          <ul>
+      <% if docs.any? %>
+        <div class="row">
+          <div class="document-year span10">
+            <div class="document-year-caption"><%= year %></div>
             <% docs.each do |month, docs| %>
-              <li>
-                <%= month_name(month) %>
-                <% if docs.any? %>
-                  <ul>
-                    <% docs.each do |doc| %>
-                      <li><%= link_to doc.date.day, "/doc/#{doc.id}" %></li>
-                    <% end %>
-                  </ul>
+              <% docs.each do |doc| %>
+                <%= link_to "/doc/#{doc.id}" do %>
+                  <div class="document-display span1">
+                    <div class="document-display-month">
+                      <%= month_name(month) %>
+                    </div>
+                    <div class="document-display-day">
+                      <%= doc.date.day %>
+                    </div>
+                  </div>
                 <% end %>
-              </li>
+              <% end %>
             <% end %>
-          </ul>
-        <% end %>
-      </li>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
+  </div>
 
 <% end %>

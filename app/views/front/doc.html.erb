@@ -1,6 +1,8 @@
 <% content_for :title do %><%= @document.date %><% end %>
 
-<h2><%= @document.date %> <%= link_to 'Download do documento', @document.source_url, :class => 'btn', :style => 'float:right;' %></h2>
+<h2 class="document-title">
+  <%= @document.date %> <%= link_to 'Download do documento', @document.source_url, :class => 'btn-download', :style => 'float:right;' %>
+</h2>
 
 <div class="document-content">
   <%= @document.content_html %>
