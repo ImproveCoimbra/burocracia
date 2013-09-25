@@ -23,17 +23,10 @@ mark {
 }
 
 #header {
-  position: relative;
   background-color: $background-header;
   color: $background;
   border-bottom: solid #34495E 10px;
   margin-bottom: 40px;
-
-  .social {
-    position: absolute;
-    right: 40px;
-    top: 20px;
-  }
 
   h1 {
     font-size: 52px;
@@ -45,9 +38,16 @@ mark {
   }
 
   .page-header {
+    position: relative;
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: 20px;
+  }
+
+  .social {
+    position: absolute;
+    right: 0;
+    top: 20px;
   }
 
   form {
