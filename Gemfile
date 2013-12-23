@@ -11,7 +11,7 @@ gem 'uglifier'
 gem 'mongoid', :github => 'mongoid/mongoid'
 
 #Heroku
-gem 'unicorn'
+gem 'unicorn', :platform => :ruby
 
 group :development do
   gem 'pdf-reader'
