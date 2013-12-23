@@ -12,6 +12,7 @@ gem 'mongoid', :github => 'mongoid/mongoid'
 
 #Heroku
 gem 'unicorn', :platform => :ruby
+gem 'rails_12factor' # heroku fix
 
 group :development do
   gem 'pdf-reader'
