@@ -8,7 +8,8 @@ gem 'sass-rails'
 gem 'uglifier'
 
 # Mongoid
-gem 'mongoid', :github => 'mongoid/mongoid'
+gem 'moped', '2.0.0.beta'
+gem 'mongoid', :github => 'mongoid/mongoid', :ref => "f89502d7d0b418c20f5b04f5d106b61b4091cd68"
 
 #Heroku
 gem 'unicorn', :platform => :ruby
