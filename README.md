@@ -46,3 +46,10 @@ Para a execução desta aplicação em ambiente de produção é necessário def
 * MONGODB_DATABASE (nome da base de dados MongoDB)
 * MONGODB_USERNAME (utilizador da base de dados MongoDB)
 * MONGODB_PASSWORD (password do utilizador da base de dados MongoDB)
+
+### Dados de acesso ###
+
+Para aceder à zona de administração em ambiente de desenvolvimento, os dados de acesso são:
+
+* **Username:** improve
+* **Password:** improve
