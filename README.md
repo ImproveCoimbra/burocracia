@@ -2,7 +2,7 @@
 
 ## Sobre ##
 
-Esta aplicação pretende disponibilizar as actas da Câmara Municipal de Coimbra num formato aberto e facilmente pesquisável. As actas são disponibilizadas em PDF, no website da Câmara. Esta aplicação importa, converte para HTML, indexa e disponibiliza essas mesmas actas.
+Esta aplicação pretende disponibilizar as actas da Câmara Municipal de Coimbra num formato aberto e fácil de pesquisar. As actas são disponibilizadas em PDF, no website da Câmara. Esta aplicação importa, converte para HTML, indexa e disponibiliza essas mesmas actas.
 
 Este é um projecto desenvolvido no [Improve Coimbra](http://improvecoimbra.org/), um evento mensal com o objectivo de encontrar e implementar soluções para melhorar Coimbra.
 
