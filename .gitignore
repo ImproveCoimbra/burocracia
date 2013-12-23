@@ -10,3 +10,4 @@ coverage.data
 lib/tasks/support_files/results/*
 solr/*
 .ruby-version
+*.bat
