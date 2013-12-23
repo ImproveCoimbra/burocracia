@@ -1,0 +1,22 @@
+development:
+  sessions:
+    default:
+      database: burocracia-dev
+      hosts:
+        - localhost:27017
+
+test:
+  sessions:
+    default:
+      database: burocracia-test
+      hosts:
+        - localhost:27017
+
+production:
+  sessions:
+    default:
+      hosts:
+        - <%= ENV['MONGODB_HOST'] %>
+      database: <%= ENV['MONGODB_DATABASE'] %>
+      username: <%= ENV['MONGODB_USERNAME'] %>
+      password: <%= ENV['MONGODB_PASSWORD'] %>
