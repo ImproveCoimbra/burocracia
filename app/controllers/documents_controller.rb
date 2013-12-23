@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
 
-  http_basic_authenticate_with :name => 'improve', :password => (ENV['ADMIM_PASSWORD'] || 'improve')
+  http_basic_authenticate_with :name => 'improve', :password => (ENV['ADMIN_PASSWORD'] || 'improve')
 
   # GET /documents
   # GET /documents.json
