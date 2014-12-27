@@ -1,24 +1,28 @@
 source 'http://rubygems.org'
 
-ruby '1.9.3'
-gem 'rails', '4'
+gem 'rails', '~> 4.2.0'
 
 gem 'jquery-rails'
 gem 'sass-rails'
 gem 'uglifier'
 
 # Mongoid
-gem 'moped', '2.0.0.beta'
-gem 'mongoid', :github => 'mongoid/mongoid', :ref => "f89502d7d0b418c20f5b04f5d106b61b4091cd68"
+gem 'mongoid'
 
 #Heroku
 gem 'unicorn', :platform => :ruby
 gem 'rails_12factor', :group => :production # heroku fix
 
+group :development, :test do
+  gem 'did_you_mean' # Help getting names right and avoiding simple bugs
+end
+
 group :development do
-  gem 'pdf-reader'
-  gem 'nokogiri'
-  gem 'rb-readline', '~> 0.4.2'
+  gem 'spring'
+  gem 'nokogiri' # HTML parsing
+  gem 'better_errors' # Better error stacktraces in browser
+  gem 'binding_of_caller' # Enable inline debugging on browser errors page
+  gem 'web-console', '~> 2.0' # Rails 4.2
 end
 
 gem 'kaminari'

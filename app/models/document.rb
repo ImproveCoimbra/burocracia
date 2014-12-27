@@ -16,4 +16,10 @@ class Document
   	content.gsub(/(\s*\n\s*){2,}/, '<br/><br/>').gsub(/\s*\n\s*/, '<br/>').html_safe
   end
 
+  def date
+    self['date'].try(:to_date)
+  rescue ActiveModel::MissingAttributeError
+    attributes['date'].try(:to_date)
+  end
+
 end
