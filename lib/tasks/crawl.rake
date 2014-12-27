@@ -54,7 +54,7 @@ task :import_new_documents => :environment do
       document = Document.new
       document.source_url = doc_url
       # Convert document's pdf file to txt and save its content
-      document.content = `cmd.exe /c pdf2txt.py -M 100 -W 100 temp.pdf`
+      document.content = `pdf2txt.py -M 100 -W 100 temp.pdf`
 
       # Remove spaces before some chars
       %w{ç í â Ó ó ô}.each do |letter|
