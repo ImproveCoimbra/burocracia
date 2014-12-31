@@ -8,7 +8,7 @@
 
   <h3>
     Resultados para "<%= params[:q] %>"
-    <small><%= pluralize(@stats['n'], 'resultado') %></small>
+    <small><%= pluralize(@all_documents.size, 'resultado') %></small>
   </h3>
 
   <% if @all_documents.size > 3 %>
