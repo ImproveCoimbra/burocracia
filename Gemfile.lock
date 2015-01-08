@@ -62,14 +62,20 @@ GEM
       interception
     erubis (2.7.0)
     execjs (2.2.2)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    haml (4.0.6)
+      tilt
     hike (1.2.3)
     i18n (0.7.0)
     interception (0.5)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.3)
+      railties (>= 3.2.16)
     json (1.8.1)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
@@ -92,6 +98,7 @@ GEM
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
     multi_json (1.10.1)
+    nested_form (0.3.2)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     optionable (0.2.0)
@@ -99,6 +106,9 @@ GEM
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
+    rack-pjax (0.8.0)
+      nokogiri (~> 1.5)
+      rack (~> 1.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.2.0)
@@ -123,6 +133,20 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_admin (0.6.6)
+      builder (~> 3.1)
+      coffee-rails (~> 4.0)
+      font-awesome-rails (>= 3.0, < 5)
+      haml (~> 4.0)
+      jquery-rails (>= 3.0, < 5)
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.14)
+      nested_form (~> 0.3)
+      rack-pjax (~> 0.7)
+      rails (~> 4.0)
+      remotipart (~> 1.0)
+      safe_yaml (~> 1.0)
+      sass-rails (>= 4.0, < 6)
     rails_serve_static_assets (0.0.3)
     rails_stdout_logging (0.0.3)
     railties (4.2.0)
@@ -132,6 +156,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.13.0)
     rake (10.4.2)
+    remotipart (1.2.1)
+    safe_yaml (1.0.4)
     sass (3.4.9)
     sass-rails (5.0.0)
       railties (>= 4.0.0, < 5.0)
@@ -184,6 +210,7 @@ DEPENDENCIES
   quiet_assets
   rails (~> 4.2.0)
   rails_12factor
+  rails_admin
   sass-rails
   spring
   uglifier

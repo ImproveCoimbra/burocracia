@@ -49,7 +49,7 @@ Para a execução desta aplicação em ambiente de produção é necessário def
 
 ### Dados de acesso ###
 
-Para aceder à zona de administração em ambiente de desenvolvimento, os dados de acesso são:
+Para aceder à zona de administração (/admin) em ambiente de desenvolvimento, os dados de acesso são:
 
 * **Username:** improve
 * **Password:** improve

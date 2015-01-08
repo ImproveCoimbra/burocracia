@@ -10,8 +10,4 @@ class FrontController < ApplicationController
     end
   end
 
-  def doc
-    @document = Document.find(params[:id])
-  end
-
 end

@@ -17,6 +17,7 @@ gem 'rails_12factor', :group => :production # heroku fix
 gem 'bootstrap-sass', '~> 3.3.1' # CSS framework
 gem 'kaminari' # Pagination
 gem 'chartkick' # Graphics
+gem 'rails_admin' # Admin section
 
 group :development, :test do
   gem 'did_you_mean' # Help getting names right and avoiding simple bugs

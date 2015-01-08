@@ -1,7 +1,8 @@
 Docs::Application.routes.draw do
-  resources :documents
-
-  get 'doc/:id', :controller => 'front', :action => 'doc'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  resources :documents, path: 'doc', only: [:show]
+  
   get ':action', :controller => 'front'
 
   root :to => 'front#index'

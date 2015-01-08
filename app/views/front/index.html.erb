@@ -38,7 +38,7 @@
             <div class="document-year-caption"><%= year %></div>
             <% docs.each do |month, docs| %>
               <% docs.each do |doc| %>
-                <%= link_to "/doc/#{doc.id}" do %>
+                <%= link_to doc do %>
                   <div class="col-xs-4 col-sm-2 col-lg-1">
                     <div class="document-display">
                       <div class="document-display-month">
