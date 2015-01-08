@@ -5,6 +5,7 @@ gem 'rails', '~> 4.2.0'
 
 gem 'jquery-rails'
 gem 'sass-rails'
+gem 'coffee-rails'
 gem 'uglifier'
 
 gem 'mongoid'
@@ -13,7 +14,7 @@ gem 'mongoid'
 gem 'unicorn', :platform => :ruby
 gem 'rails_12factor', :group => :production # heroku fix
 
-gem 'bootstrap-sass', '2.3.2.2' # CSS framework
+gem 'bootstrap-sass', '~> 3.3.1' # CSS framework
 gem 'kaminari' # Pagination
 gem 'chartkick' # Graphics
 

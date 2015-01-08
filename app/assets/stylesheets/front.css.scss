@@ -1,8 +1,3 @@
-$background: #ECF0F1;
-$background-header: #2C3F50;
-$text-color: #2C3F50;
-$main-color: #2ECD71;
-
 body {
   background-color: $background;
   color: $background-header;
@@ -22,46 +17,37 @@ mark {
   background-color: $main-color;
 }
 
-#header {
+.header {
   background-color: $background-header;
   color: $background;
   border-bottom: solid #34495E 10px;
-  margin-bottom: 40px;
+  margin-bottom: $baseline*2;
 
   h1 {
     font-size: 52px;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: $baseline;
+
     a {
       color: $main-color;
     }
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: 36px;
+    }
   }
+
 
   .page-header {
     position: relative;
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 20px;
+    margin-bottom: $baseline;
   }
 
   .social {
-    position: absolute;
-    right: 0;
-    top: 20px;
-  }
-
-  form {
-    margin: 0;
-    .search-query {
-      box-sizing: border-box;
-      font-size: 24px;
-      line-height: 30px;
-      padding: 10px 20px;
-      height: 50px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-    }
+    margin-top: $baseline;
+    text-align: right;
   }
 
   a {
@@ -70,35 +56,34 @@ mark {
   }
 
   p {
-    margin: 20px 0;
+    margin: $baseline 0;
     &.small {
       font-size: 11px;
-      margin: 10px 0;
+      margin: $baseline/2 0;
     }
   }
-
 }
 
 h2 {
   font-size: 24px;
-  line-height: 40px;
+  line-height: $baseline*2;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0;
 
   &.document-title {
     font-size: 32px;
-    margin-bottom: 40px;
+    margin-bottom: $baseline*2;
   }
 }
 
 dl {
   dt {
     font-size: 18px;
-    line-height: 30px;
+    line-height: $baseline*1.5;
   }
   dd {
-    margin-bottom: 40px;
+    margin-bottom: $baseline*2;
   }
 }
 
@@ -118,11 +103,17 @@ dl {
     border-top: 3px solid $background-header;
 
     .document-year-caption {
-      position: absolute;
-      top: 60px;
-      left: -80px;
       font-size: 24px;
       font-weight: bold;
+      left: -80px;
+      position: absolute;
+      top: $baseline*3;
+
+      @media screen and (max-width: $screen-sm) {
+        margin-bottom: $baseline;
+        position: static;
+        text-align: center;
+      }
     }
 
     .document-display {
@@ -149,7 +140,6 @@ dl {
         filter:alpha(opacity=75);
       }
     }
-
   }
 }
 
@@ -173,9 +163,9 @@ dl {
 
 .document-content {
   font-size: 15px;
-  line-height: 20px;
+  line-height: $baseline;
 }
 
 #chart {
-  margin: 40px 0;
+  margin: $baseline*2 0;
 }

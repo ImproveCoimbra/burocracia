@@ -14,23 +14,29 @@
 </head>
 <body>
 
-  <div id="header">
+  <div class="header">
     <div class="container">
       <div class="row">
-        <div class="span10 offset1">
+        <div class="col-xs-10 col-xs-offset-1">
           <div class="page-header">
-            <div class="social">
-              <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fburocracia.madeincoimbra.org%2F&amp;width=50&amp;height=65&amp;colorscheme=dark&amp;layout=box_count&amp;action=like&amp;show_faces=true&amp;send=false&amp;appId=1412326508983603" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px;" allowTransparency="true"></iframe>
+            <div class="row">
+              <div class="col-xs-10 col-sm-11">
+                <h1>
+                  <a href="/">Burocracia</a>
+                </h1>
+                <p>
+                  Queremos disponibilizar documentos públicos num formato aberto, fácil de pesquisar e analisar.
+                </p>
+              </div>
+              <div class="social col-xs-2 col-sm-1">
+                <%= render 'layouts/facebook_like' %>
+              </div>
             </div>
-            <h1>
-              <a href="/">Burocracia</a>
-            </h1>
-            <p>
-              Queremos disponibilizar documentos públicos num formato aberto, fácil de pesquisar e analisar.
-            </p>
-            <form action="/" class="form-search">
-              <input type="text" style="width: 100%" placeholder="Pesquisar documentos" class="search-query" name="q" value="<%= params[:q] %>" />
+
+            <form action="/">
+              <input type="search" placeholder="Pesquisar documentos" class="form-control input-lg" name="q" value="<%= params[:q] %>" />
             </form>
+
             <p>
               Exemplos: <a href="?q=IKEA">IKEA</a>, <a href="?q=Metro Mondego">Metro Mondego</a> e <a href="?q=Choupal">Choupal</a>.
             </p>
@@ -45,7 +51,7 @@
 
   <div id="contents" class="container">
     <div class="row">
-      <div class="span10 offset1">
+      <div class="col-xs-10 col-xs-offset-1">
         <%= yield %>
       </div>
     </div>
@@ -54,7 +60,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="span12">
+        <div class="col-xs-12">
           <p>
             <a href="mailto:info@madeincoimbra.org">Feedback</a> | <a href="http://improve.madeincoimbra.org">Made in Improve Coimbra</a>
           </p>
@@ -63,16 +69,7 @@
     </div>
   </footer>
 
-  <% if Rails.env.production? %>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-42452983-1', 'madeincoimbra.org');
-      ga('send', 'pageview');
-    </script>
-  <% end %>
+  <% render 'layouts/google_analytics' if Rails.env.production? %>
 
 </body>
 </html>

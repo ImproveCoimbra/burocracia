@@ -1,14 +1,22 @@
-//= require_self
-//= require_tree .
-
 @import "bootstrap";
-@import "bootstrap-responsive";
+
+// Variables
+$background: #ECF0F1;
+$background-header: #2C3F50;
+$text-color: #2C3F50;
+$main-color: #2ECD71;
+
+$baseline: 20px;
+$screen-sm: 768px;
+
+// Our files
+@import "*";
 
 a:hover {
   text-decoration: none;
 }
 
 footer {
-  margin: 40px 0;
+  margin: $baseline*2 0;
   text-align: center;
 }
