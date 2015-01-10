@@ -6,10 +6,10 @@
   <meta name="description" content="Disponibilizar documentos públicos em formato aberto. Começámos com as actas da Câmara Municipal de Coimbra">
   <meta name="keywords" content="actas,camara,coimbra,improve,documentos">
   <link rel="shortcut icon" type="image/png" href="<%= image_path 'burocracia.png' %>" />
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <script type="text/javascript" src="//www.google.com/jsapi"></script>
-  <%= javascript_include_tag "chartkick" %>
+  <%= javascript_include_tag 'chartkick' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -33,12 +33,12 @@
               </div>
             </div>
 
-            <form action="/">
+            <form action="/search">
               <input type="search" placeholder="Pesquisar documentos" class="form-control input-lg" name="q" value="<%= params[:q] %>" />
             </form>
 
             <p>
-              Exemplos: <a href="/?q=IKEA">IKEA</a>, <a href="/?q=Metro Mondego">Metro Mondego</a> e <a href="/?q=Choupal">Choupal</a>.
+              Exemplos: <a href="/search?q=IKEA">IKEA</a>, <a href="/search?q=Metro Mondego">Metro Mondego</a> e <a href="/search?q=Choupal">Choupal</a>.
             </p>
             <p class="small">
               Os documentos aqui disponíveis foram processados automaticamente e poderão conter imprecisões.

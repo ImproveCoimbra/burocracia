@@ -1,8 +1,8 @@
-$('dl').append("<%= js_partial('doc_excerpt', :collection => @documents, :as => :document) %>")
+$('dl').append("<%= js_partial @documents %>")
 
 $('#load-more-docs')
   <% if params[:page].to_i < @documents.total_pages %>
-  .attr('href', '?page=<%=params[:page].to_i+1%>&q=<%=params[:q]%>')
+  .attr('href', '/search?page=<%=params[:page].to_i+1%>&q=<%=params[:q]%>')
   .removeClass('btn-disabled')
   .removeAttr('disabled')
   .html('Ver mais')

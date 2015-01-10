@@ -1,61 +1,29 @@
-<% if params[:q].present? %>
-  <% content_for :title do %>Resultados para "<%= params[:q] %>"<% end %>
-<% end %>
-
 <h2>Actas da Câmara Municipal de Coimbra</h2>
 
-<% if params[:q].present? %>
-
-  <h3>
-    Resultados para "<%= params[:q] %>"
-    <small><%= pluralize(@all_documents.size, 'resultado') %></small>
-  </h3>
-
-  <% if @all_documents.size > 3 %>
-    <%= column_chart count_by_year(@all_documents), :height => "100px", :id => "chart", :library => {:colors => ["#ECF0F1"], :backgroundColor => "#2ECD71", :color => "#ECF0F1", :hAxis => {:textStyle => {:fontSize => 10, :color => "#ECF0F1"}}, :vAxis => {:textStyle => {:color => "#ECF0F1"}}} %>
-  <% end %>
-
-  <% if @documents.any? %>
-    <dl>
-      <%= render :partial => 'doc_excerpt', :collection => @documents, :as => :document %>
-    </dl>
-    <% if @documents.total_pages > 1 %>
-      <p class="pagination">
-        <%= link_to 'Ver mais', "?page=#{(params[:page]||1)+1}&q=#{params[:q]}", :remote => true, :id => 'load-more-docs', :class => 'btn btn-default' %>
-      </p>
-    <% end %>
-  <% else %>
-    <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
-  <% end %>
-
-<% else %>
-
-  <div id="documents-list">
-    <% organize(@documents).each do |year, docs| %>
-      <% if docs.any? %>
-        <div class="row">
-          <div class="document-year col-xs-12">
-            <div class="document-year-caption"><%= year %></div>
-            <% docs.each do |month, docs| %>
-              <% docs.each do |doc| %>
-                <%= link_to doc do %>
-                  <div class="col-xs-4 col-sm-2 col-lg-1">
-                    <div class="document-display">
-                      <div class="document-display-month">
-                        <%= month_name(month) %>
-                      </div>
-                      <div class="document-display-day">
-                        <%= doc.date.day %>
-                      </div>
+<div id="documents-list">
+  <% organize(@documents).each do |year, docs| %>
+    <% if docs.any? %>
+      <div class="row">
+        <div class="document-year col-xs-12">
+          <div class="document-year-caption"><%= year %></div>
+          <% docs.each do |month, docs| %>
+            <% docs.each do |doc| %>
+              <%= link_to doc do %>
+                <div class="col-xs-4 col-sm-2 col-lg-1">
+                  <div class="document-display">
+                    <div class="document-display-month">
+                      <%= month_name(month) %>
+                    </div>
+                    <div class="document-display-day">
+                      <%= doc.date.day %>
                     </div>
                   </div>
-                <% end %>
+                </div>
               <% end %>
             <% end %>
-          </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     <% end %>
-  </div>
-
-<% end %>
+  <% end %>
+</div>

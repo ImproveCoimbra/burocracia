@@ -1,0 +1,20 @@
+AllCops:
+  Include:
+    - 'app/**/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+  Exclude:
+    - 'app/assets/images/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'public/**/*'
+    - 'script/**/*'
+    - 'test/**/*'
+    - '**/*.html*'
+    - '**/*.css*'
+    - '**/*.js*'
+  RunRailsCops: true
+
+Documentation:
+  Enabled: false

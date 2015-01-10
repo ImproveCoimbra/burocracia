@@ -1,0 +1,34 @@
+<% content_for :title do %>Resultados para "<%= params[:q] %>"<% end %>
+
+<h2>Actas da Câmara Municipal de Coimbra</h2>
+
+<h3>
+  Resultados para "<%= params[:q] %>"
+  <small><%= pluralize(@all_documents.size, 'resultado') %></small>
+</h3>
+
+<% if @all_documents.size > 3 %>
+  <%= column_chart count_by_year(@all_documents),
+                   height: '100px',
+                   id: 'chart',
+                   library: {
+                    colors: ['#ECF0F1'],
+                    backgroundColor: '#2ECD71',
+                    color: '#ECF0F1',
+                    hAxis: { textStyle: { fontSize: 10, color: '#ECF0F1' } },
+                    vAxis: { textStyle: { color: '#ECF0F1' } } }
+  %>
+<% end %>
+
+<% if @documents.any? %>
+  <dl>
+    <%= render @documents %>
+  </dl>
+  <% if @documents.total_pages > 1 %>
+    <p class="pagination">
+      <%= link_to 'Ver mais', search_path(page: (params[:page] || 1).to_i + 1, q: params[:q]), remote: true, id: 'load-more-docs', class: 'btn btn-default' %>
+    </p>
+  <% end %>
+<% else %>
+  <p>Não foi encontrado nenhum documento com esses termos de pesquisa.</p>
+<% end %>

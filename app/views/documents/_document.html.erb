@@ -1,6 +1,6 @@
 <dt><%= link_to document.date.to_date, document %></li>
 <% if params[:q].present? and document.content =~ /#{Regexp.escape(params[:q])}/im %>
   <dd>
-    <%= highlight(excerpt(document.content, params[:q], :radius => 150), params[:q]) %>
+    <%= highlight(excerpt(document.content, params[:q], radius: 150), params[:q]) %>
   </dd>
 <% end %>

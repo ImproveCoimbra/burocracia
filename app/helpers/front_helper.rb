@@ -1,13 +1,13 @@
 module FrontHelper
-
   def organize(documents)
     docs = {}
     documents.each do |document|
-      if document.date
-        docs[document.date.year] ||= {}
-        docs[document.date.year][document.date.month] ||= []
-        docs[document.date.year][document.date.month] << document
-      end
+      next unless document.date
+      year = document.date.year
+      month = document.date.month
+      docs[year] ||= {}
+      docs[year][month] ||= []
+      docs[year][month] << document
     end
     docs
   end
@@ -22,5 +22,4 @@ module FrontHelper
     end
     counts
   end
-
 end
