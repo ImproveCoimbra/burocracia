@@ -1,3 +1,7 @@
+# Burocracia
+
+[![Code Climate](https://codeclimate.com/github/ImproveCoimbra/burocracia/badges/gpa.svg)](https://codeclimate.com/github/ImproveCoimbra/burocracia)
+
 [Website](http://burocracia.madeincoimbra.org)
 
 ## Sobre ##
