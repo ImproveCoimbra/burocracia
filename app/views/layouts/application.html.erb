@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title><% if content_for? :title %><%= yield :title %> - <% end %>Burocracia</title>
-  <meta name="description" content="Disponibilizar documentos públicos em formato aberto. Começámos com as actas da Câmara Municipal de Coimbra">
+  <title><% if content_for? :title %><%= yield :title %> - <% end %>Actas da Câmara Municipal de Coimbra - Burocracia</title>
+  <meta name="description" content="<% if content_for? :description %><%= yield :description %><% else %>Disponibilizar documentos públicos em formato aberto. Começámos com as actas da Câmara Municipal de Coimbra<% end %>">
   <meta name="keywords" content="actas,camara,coimbra,improve,documentos">
   <link rel="shortcut icon" type="image/png" href="<%= image_path 'burocracia.png' %>" />
   <%= stylesheet_link_tag    'application', media: 'all' %>

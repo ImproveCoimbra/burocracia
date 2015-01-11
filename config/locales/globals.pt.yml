@@ -32,7 +32,7 @@ pt:
     - Sexta
     - Sábado
     formats:
-      default: "%d/%m/%Y"
+      default: "%d de %B de %Y"
     month_names:
     -
     - Janeiro

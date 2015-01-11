@@ -1,7 +1,8 @@
-<% content_for :title do %><%= @document.date %><% end %>
+<% content_for :title do %><%= l @document.date %><% end %>
+<% content_for :description do %>Acta de <%= l @document.date %> da reunião da Câmara Municipal de Coimbra<% end %>
 
 <h2 class="document-title">
-  <%= @document.date %> <%= link_to 'Download do documento', @document.source_url, class: 'btn-download', style: 'float:right;' %>
+  <%= l @document.date %> <%= link_to 'Download do documento', @document.source_url, class: 'btn-download pull-right' %>
 </h2>
 
 <div class="document-content">
